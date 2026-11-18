@@ -1,0 +1,12 @@
+name: Installer static checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bash syntax and static security checks
+        run: bash tests/static-checks.sh
